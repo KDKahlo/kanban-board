@@ -1,7 +1,7 @@
 # Kanban Board
 
 This Kanban board was created using React with Vite set up.
-It also used react-beautiful and ant for some avatar animation.
+It also used react-beautiful, ant for some avatar animation and styled components.
 Ensure after running 'npm install' that you have all the appropriate dependencies in package.json.
 
 ## Kanban Whiteboard for Main Components
