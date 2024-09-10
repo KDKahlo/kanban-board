@@ -26,9 +26,41 @@ const Tasklist = styled.div`
     flex-grow: 1;
     min-height: 100px;
     `;
-
-export default function Column() {
+//passing title, task and the task id as props
+export default function Column({title, tasks, id}) {
   return (
-    <div>Column</div>
+    //from Container styled.div
+   <Container>
+    {/* from Title styled.div */}
+    <Title
+        style={{
+            backgroundColor: "lightblue",
+            position: "stick",
+        }}
+    >
+        {title}
+    </Title>
+<Droppable droppableId={id}>
+
+    {(provided, snapshot) => {
+        <Tasklist
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+            isDraggingOver={snapshot.isDraggingOver}      
+        >
+            {/* provide your task here */}
+
+            {provided.placeholder}
+        </Tasklist>
+
+
+
+    }}
+
+
+</Droppable>
+
+
+   </Container>
   )
 }
